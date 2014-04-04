@@ -1,0 +1,4 @@
+name: One Less JPG
+markdown: redcarpet
+pygments: true
+exclude: [node_modules, src]

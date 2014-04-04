@@ -37,7 +37,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'js/final.min.js': ['js/poop.js']
+          'js/final.min.js': ['src/js/poop.js']
         }
       }
     },
@@ -79,11 +79,11 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['src/css/*.css'],
-        tasks: ['autoprefixer']
+        tasks: ['watchCss']
       },
       js: {
         files: ['src/js/*.js'],
-        tasks: ['jshint', 'uglify']
+        tasks: ['watchJs']
       },
     },
 
@@ -112,7 +112,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
 
   // Custom tasks.
-  grunt.registerTask('watchCss', ['clean', 'concat', 'autoprefixer']);
+  grunt.registerTask('watchCss', ['clean:css', 'concat', 'autoprefixer']);
+  grunt.registerTask('watchJs', ['clean:js', 'jshint', 'uglify']);
 
   // Default task.
   grunt.registerTask('default', ['concurrent:default']);
