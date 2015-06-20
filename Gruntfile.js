@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         separator: ';'
       },
       css: {
-        src: ['src/css/main.css', 'src/css/syntax.css'],
+        src: ['src/css/main.css'],
         dest: 'css/main.css',
       },
     },
